@@ -129,7 +129,7 @@ class EJuiDateTimePicker extends CJuiDatePicker
 
         if ($this->language != 'en') {
             $this->registerScriptFile($this->i18nScriptFile);
-            $cs->registerScriptFile($this->assetsUrl .'/localization/jquery-ui-timepicker-'. $this->language .'.js', CClientScript::POS_END);
+            $cs->registerScriptFile($this->assetsUrl .'/lang/jquery-ui-timepicker-'. $this->language .'.js', CClientScript::POS_END);
             $cs->registerScript(
                 __CLASS__ .'#i18n-'. $this->language,
                 "jQuery.datepicker.setDefaults(jQuery.datepicker.regional['{$this->language}']);",
