@@ -103,7 +103,7 @@ class EJuiDateTimePicker extends CJuiDatePicker
                 if (file_exists($i18nScriptPath)) {
                     $cs->registerScriptFile($assets . '/localization/' . $i18nScriptFile, CClientScript::POS_END);
                 }
-                $js = "jQuery('#{$id}').{$this->mode}picker(jQuery.extend(jQuery.datepicker.regional['{$this->language}'], {$options}));";
+                $cs->registerScript(__CLASS__ . '#i18n-' . $this->language, "jQuery.datepicker.setDefaults(jQuery.datepicker.regional['{$this->language}']);");
             }
             if (isset($this->defaultOptions)) {
                 $this->registerScriptFile($this->i18nScriptFile);
