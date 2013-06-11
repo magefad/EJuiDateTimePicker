@@ -33,7 +33,14 @@ class EJuiDateTimePicker extends CJuiDatePicker
             throw new CException('EJuiDatePicker unknown mode "' . $this->mode . '". Use time, datetime or date!');
         }
         if (empty($this->language)) {
-            $this->language = substr(Yii::app()->getLanguage(), 0, 2);
+            $this->language = str_replace('-', '_', strtolower(Yii::app()->language));
+            $parts = explode('_', $this->language);
+            if (count($parts) == 2) {
+                $this->language = $parts[0] . '-' . strtoupper($parts[1]);
+            }
+            if ($this->language == 'en-US') {
+                $this->language = 'en';
+            }
         }
         parent::init();
     }
