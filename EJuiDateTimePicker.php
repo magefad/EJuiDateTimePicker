@@ -104,8 +104,9 @@ class EJuiDateTimePicker extends CJuiDatePicker
                 if (!isset($this->options['onSelect'])) {
                     $this->options['onSelect'] = new CJavaScriptExpression("function( selectedDate ) { jQuery('#{$id}').val(selectedDate);}");
                 }
+                $this->options['altField'] = '#'. $id;
                 $id = $this->htmlOptions['id'] = $id . '_container';
-                $this->htmlOptions['name']     = $name . '_container';
+                $this->htmlOptions['name'] = $name . '_container';
                 echo CHtml::tag('div', $this->htmlOptions, '');
             }
 
