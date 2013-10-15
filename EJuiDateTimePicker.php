@@ -125,7 +125,7 @@ class EJuiDateTimePicker extends CJuiDatePicker
     protected function registerClientScript()
     {
         $cs = Yii::app()->clientScript;
-        $cs->registerCssFile($this->assetsUrl . '/jquery-ui-timepicker-addon.css');
+        $cs->registerCssFile($this->assetsUrl . '/jquery-ui-timepicker-addon'. (YII_DEBUG ? '' : '.min') .'.css');
         $cs->registerScriptFile($this->assetsUrl .'/jquery-ui-timepicker-addon'. (YII_DEBUG ? '' : '.min') .'.js', CClientScript::POS_END);
 
         if ($this->language != 'en') {
